@@ -3,65 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="sources/style.css" />
+    <title>Jamie's Weather App</title>
   </head>
   <body>
     <header>
       <h1>Weather Forecast</h1>
-      <p>Check the weather for cities from around the world.</p>
-      <form>
-        <input type="search" placeholder="Enter a city" required />
-        <input type="submit" value="Search" />
+      <p class="subHead">Check the weather for cities from around the world.</p>
+      <form class="cityForm">
+        <input
+          type="search"
+          placeholder="Enter a city"
+          required
+          class="cityInput"
+        />
+        <input type="submit" value="Search" class="cityButton" />
       </form>
     </header>
     <main>
-      <div class="location">
-        <h2>Maarssen</h2>
-        <h3>Netherlands</h3>
-        <p>
-          22°
-          <br />
-          Partly Cloudy
-          <br />
-          Feels like 20°
-        </p>
-      </div>
-      <div class="mainEmoji">insert emoji</div>
-      <div class="smallEmoji">💧</div>
-      <div class="secondaryInfo">
-        Humidity
-        <br />
-        65%
-      </div>
-      <div class="smallEmoji">💨</div>
-      <div class="secondaryInfo">
-        Wind Speed
-        <br />
-        15 km/h
-      </div>
-      <div class="popularCities">
-        Popular Cities from Around the World
-        <br />
-        New York
-        <br />
-        22°
-        <br />
-        London
-        <br />
-        15°
-        <br />
-        Tokyo
-        <br />
-        28°
-        <br />
-        Sydney
-        <br />
-        18°
-        <br />
-        Paris
-        <br />
-        19°
-      </div>
+      <container class="searchCity">
+        <div class="location">
+          <h2>Maarssen</h2>
+          <h3>Netherlands</h3>
+          <div class="mainEmoji">☁️</div>
+          <p class="currentStats">
+            <span class="currentTemp">22°</span>
+            <br />
+            Partly Cloudy
+            <br />
+            Feels like 20°
+          </p>
+          <hr />
+          <container class="additionalInfo">
+            <div class="smallEmoji">💧</div>
+            <div class="secondaryInfo">
+              Humidity
+              <br />
+              65%
+            </div>
+            <div class="smallEmoji">💨</div>
+            <div class="secondaryInfo">
+              Wind Speed
+              <br />
+              15 km/h
+            </div>
+          </container>
+        </div>
+      </container>
     </main>
 
     <footer>
