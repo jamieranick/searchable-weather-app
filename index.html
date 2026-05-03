@@ -16,11 +16,12 @@
     <header>
       <h1>Weather Forecast</h1>
       <p class="subHead">Check the weather for cities from around the world.</p>
-      <form class="cityForm">
+      <form class="cityForm" id="searchForm">
         <input
           type="search"
           placeholder="Enter a city"
           required
+          id="cityInput"
           class="cityInput"
         />
         <input type="submit" value="Search" class="cityButton" />
@@ -29,8 +30,8 @@
     <main>
       <container class="searchCity">
         <div class="location">
-          <h2>Maarssen</h2>
-          <h3>Netherlands</h3>
+          <h2 id="cityName">Maarssen</h2>
+          <h3 id="countryName">Netherlands</h3>
           <div class="mainEmoji">☁️</div>
           <p class="currentStats">
             <span class="currentTemp">22°</span>
@@ -71,5 +72,6 @@
         >Netfly</a
       >.
     </footer>
+    <script src="sources/script.js"></script>
   </body>
 </html>
