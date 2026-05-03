@@ -10,6 +10,8 @@ function updateWeatherInfo(response) {
   let windElement = document.querySelector("#wind");
   let wind = response.data.wind.speed;
   let emojiElement = document.querySelector("#emoji");
+  let dateElement = document.querySelector("#date");
+  let date = new Date(response.data.time * 1000);
 
   emojiElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="mainEmoji" />`;
   refreshTemp.innerHTML = Math.round(temperature);
@@ -19,7 +21,31 @@ function updateWeatherInfo(response) {
   feelsLikeElement.innerHTML = Math.round(feelsTemp);
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(wind);
+  dateElement.innerHTML = dateFormatted(date);
   console.log(response.data);
+}
+
+function dateFormatted(date) {
+  let minutes = date.getMinutes();
+  let hours = date.getHours();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  return `${day} ${hours}:${minutes}`;
 }
 
 function searchCity(city) {

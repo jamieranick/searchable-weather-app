@@ -60,17 +60,22 @@ h3 {
   font-size: 20;
   color: rgba(0, 0, 0, 0.5);
 }
-
+.date {
+  margin: auto;
+  padding: 5px 0px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+}
 .currentTemp {
   font-size: 75px;
   font-weight: 500;
 }
 
 .mainEmoji {
-  margin: -20px 0px 0px 200px;
-  height: 175px;
-  width: 175px;
-  padding: 25px 0px;
+  margin: -50px 0px 0px 200px;
+  height: 125px;
+  width: 125px;
+  padding: 50px 0px;
 }
 .currentStats {
   margin: -170px 0px 20px 25px;
