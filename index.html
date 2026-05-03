@@ -31,15 +31,16 @@
     <main>
       <container class="searchCity">
         <div class="location">
-          <h2 id="cityName">Maarssen</h2>
-          <h3 id="countryName">Netherlands</h3>
+          <h2 id="cityName"></h2>
+          <h3 id="countryName"></h3>
           <div class="mainEmoji">☁️</div>
           <p class="currentStats">
-            <span class="currentTemp">22°</span>
+            <span class="currentTemp" id="currentTemp"></span>
+            <span class="celcius">°C</span>
             <br />
-            Partly Cloudy
+            <span id="conditions"></span>
             <br />
-            Feels like 20°
+            Feels like <span id="feelsLike"></span>°
           </p>
           <hr />
           <container class="additionalInfo">
@@ -47,13 +48,13 @@
             <div class="secondaryInfo">
               Humidity
               <br />
-              65%
+              <span id="humidity"></span>%
             </div>
             <div class="smallEmoji">💨</div>
             <div class="secondaryInfo">
               Wind Speed
               <br />
-              15 km/h
+              <span id="wind"></span> km/h
             </div>
           </container>
         </div>
