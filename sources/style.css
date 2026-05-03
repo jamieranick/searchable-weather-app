@@ -65,14 +65,15 @@ h3 {
   font-size: 75px;
   font-weight: 500;
 }
-.celcius {
-}
+
 .mainEmoji {
-  margin: 0px 0px 0px 400px;
-  font-size: 150px;
+  margin: -20px 0px 0px 200px;
+  height: 175px;
+  width: 175px;
+  padding: 25px 0px;
 }
 .currentStats {
-  margin: -170px 0px 20px 0px;
+  margin: -170px 0px 20px 25px;
 }
 hr {
   max-width: 600px;
@@ -90,7 +91,7 @@ hr {
 }
 
 .secondaryInfo {
-  margin: 0px 0px 0px -150px;
+  margin-left: -150px;
   color: rgba(0, 0, 0, 0.5);
 }
 

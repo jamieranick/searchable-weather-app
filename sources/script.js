@@ -9,7 +9,9 @@ function updateWeatherInfo(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let wind = response.data.wind.speed;
+  let emojiElement = document.querySelector("#emoji");
 
+  emojiElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="mainEmoji" />`;
   refreshTemp.innerHTML = Math.round(temperature);
   cityElement.innerHTML = response.data.city;
   countryElement.innerHTML = response.data.country;
