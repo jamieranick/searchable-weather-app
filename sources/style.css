@@ -100,6 +100,42 @@ hr {
   color: rgba(0, 0, 0, 0.5);
 }
 
+.weatherForecast {
+  display: flex;
+  justify-content: space-around;
+  max-width: 600px;
+  margin: 10px auto 30px auto;
+}
+
+.forecastDay {
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.forecastDate {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+.forecastIcon {
+  text-align: center;
+  font-size: 48px;
+  padding: 5px 0px;
+}
+.forecastTemp {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.forecastTemps {
+  padding: 0px 5px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 footer {
   margin: 40px auto;
   font-size: 12px;

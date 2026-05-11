@@ -61,7 +61,28 @@ function newCity(event) {
   searchCity(searchInput.value);
 }
 
+function forecastFormat() {
+  let days = ["Tues", "Wed", "Thurs", "Fri", "Sat"];
+  let fullForecast = "";
+
+  days.forEach(function (day) {
+    fullForecast =
+      fullForecast +
+      `<div class="forecastDay">
+          <div class="forecastDate">${day}</div>
+          <div class="forecastIcon">☁️</div>
+          <div class="forecastTemp">
+            <div class="forecastTemps"><span class="bold">19°</span></div>
+            <div class="forecastTemps">15°</div>
+          </div>
+        </div>`;
+  });
+}
+let forecastElement = document.querySelector("#forecast");
+forecastElement.innerHTML = fullForecast;
+
 let searchFormElement = document.querySelector("#searchForm");
 searchFormElement.addEventListener("submit", newCity);
 
 searchCity("Maarssen");
+forecastFormat();
