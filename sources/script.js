@@ -68,7 +68,8 @@ function forecastFormat() {
   days.forEach(function (day) {
     fullForecast =
       fullForecast +
-      `<div class="forecastDay">
+      `
+      <div class="forecastDay">
           <div class="forecastDate">${day}</div>
           <div class="forecastIcon">☁️</div>
           <div class="forecastTemp">
@@ -77,9 +78,10 @@ function forecastFormat() {
           </div>
         </div>`;
   });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = fullForecast;
 }
-let forecastElement = document.querySelector("#forecast");
-forecastElement.innerHTML = fullForecast;
 
 let searchFormElement = document.querySelector("#searchForm");
 searchFormElement.addEventListener("submit", newCity);
