@@ -22,7 +22,8 @@ function updateWeatherInfo(response) {
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(wind);
   dateElement.innerHTML = dateFormatted(date);
-  console.log(response.data);
+
+  getForecast(response.data.city);
 }
 
 function dateFormatted(date) {
@@ -61,22 +62,37 @@ function newCity(event) {
   searchCity(searchInput.value);
 }
 
-function forecastFormat() {
-  let days = ["Tues", "Wed", "Thurs", "Fri", "Sat"];
+function formatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+function getForecast(city) {
+  let apiKey = "a7ftc20e6332a5fbb4e6e025bb1oaa93";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(updateForecast);
+}
+
+function updateForecast(response) {
+  console.log(response.data);
+
   let fullForecast = "";
 
-  days.forEach(function (day) {
-    fullForecast =
-      fullForecast +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      fullForecast =
+        fullForecast +
+        `
       <div class="forecastDay">
-          <div class="forecastDate">${day}</div>
-          <div class="forecastIcon">☁️</div>
+          <div class="forecastDate">${formatDate(day.time)}</div>
+          <img src="${day.condition.icon_url}" class="forecastIcon">
           <div class="forecastTemp">
-            <div class="forecastTemps"><span class="bold">19°</span></div>
-            <div class="forecastTemps">15°</div>
+            <div class="forecastTemps"><span class="bold">${Math.round(day.temperature.maximum)}°</span></div>
+            <div class="forecastTemps">${Math.round(day.temperature.minimum)}°</div>
           </div>
         </div>`;
+    }
   });
 
   let forecastElement = document.querySelector("#forecast");
@@ -87,4 +103,3 @@ let searchFormElement = document.querySelector("#searchForm");
 searchFormElement.addEventListener("submit", newCity);
 
 searchCity("Maarssen");
-forecastFormat();

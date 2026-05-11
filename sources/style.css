@@ -111,6 +111,7 @@ hr {
   background-color: white;
   padding: 5px;
   border-radius: 10px;
+  margin: 0px 10px;
 }
 
 .forecastDate {
@@ -118,9 +119,9 @@ hr {
   color: rgba(0, 0, 0, 0.5);
 }
 .forecastIcon {
-  text-align: center;
-  font-size: 48px;
-  padding: 5px 0px;
+  width: 100%;
+  display: block;
+  margin: 0px auto;
 }
 .forecastTemp {
   text-align: center;
